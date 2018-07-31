@@ -8,3 +8,5 @@
     
 - Level2
         - http://www.pythonchallenge.com/pc/def/map.html
+        -解决过程:
+        - 解决方案:level1-map.py
