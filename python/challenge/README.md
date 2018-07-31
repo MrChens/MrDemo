@@ -9,4 +9,10 @@
 - Level2
     - http://www.pythonchallenge.com/pc/def/map.html
     -解决过程: 根据图中的信息，可以猜测是需要对字符作转换(+2)，然后将转换规则应用到下面的文字，得到线索将map转换为ocr得到下一关的线索`http://www.pythonchallenge.com/pc/def/ocr.html`
-    - 解决方案:level1-map.py
+    - 解决方案:  [level1-map]
+    
+    
+    
+    
+    
+    [level1-map]:https://github.com/MrChens/MrDemo/blob/master/python/challenge/level1-map.py
