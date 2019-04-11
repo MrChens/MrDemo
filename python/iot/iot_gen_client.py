@@ -10,6 +10,22 @@ import hmac
 import hashlib
 import random
 import string
+import sys
+import re
+import os
+
+def check_is_csv_file():
+    # .xlsx,.xlsm,.xltx,.xltm openpyxl 支持的格式
+    argLen = len(sys.argv)
+    if argLen >= 3:
+        return False;
+    if argLen == 1:
+        return False;
+    arg = str(sys.argv[1])
+    if re.match(r'(.*).csv$', arg):
+        return True;
+    return False;
+
 def gen_username(deviceName, productKey):
     username = deviceName + "&" + productKey
     return username
@@ -32,8 +48,17 @@ def generate_random_str(randomlength=32):
     random_str = ''.join(str_list)
     return random_str
 def main():
-    with open('device.csv', 'rb') as csvfile:
-        f = open('output.txt', 'a+')
+    if check_is_csv_file() == False:
+        print('参数错误，请按照如下格式运行脚本:')
+        print('python iot_gen_client.py xxxx.csv')
+        exit(0)
+    csvFileName = sys.argv[1]
+    destination_scv = "output.txt"
+    if os.path.isfile(destination_scv):
+        os.remove(destination_scv)
+
+    with open(csvFileName, 'rb') as csvfile:
+        f = open(destination_scv, 'a+')
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for row in spamreader:
             deviceName = row[0]
