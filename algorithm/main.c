@@ -5,7 +5,7 @@
 
 int main()
 {
-//Part1
+//Part1 
 #if 0
 	printf("%d\n", 1+2);
 	printf("%d\n", 999/10);
@@ -14,13 +14,13 @@ int main()
 	printf("%.2lf\n", 8.0/5.0);
 	printf("%d\n", 8.0/5.0);
 #endif	
-//Part2
+//Part2 
 #if 0
 	int a, b;
 	scanf("%d%d", &a, &b);
 	printf("%d\n", a+b);
 #endif
-//Part3
+//Part3 圆柱体表面积
 #if 0
 	const double pi = 4.0 * atan(1.0);
 	double r, h, s1, s2, s;
@@ -30,13 +30,13 @@ int main()
 	s = s1 * 2.0 + s2;
 	printf("Area = %.3lf\n", s);		
 #endif
-//Part4
+//Part4 三位数反转
 #if 0
 	int n4;
 	scanf("%d", &n4);
 	printf("%d%d%d\n", n4%10, n4/10%10, n4/100);
 #endif
-//Part5
+//Part5 变量交换
 #if 0 
 	int a5, b5;
 	scanf("%d%d", &a5, &b5);
@@ -47,7 +47,7 @@ int main()
 	printf("%d %d\n", a5, b5);
 #endif
 
-//Part6
+//Part6 鸡兔同笼
 #if 0
 	int a6, b6, n6, m6;
 	scanf("%d%d", &n6, &m6);
@@ -60,7 +60,7 @@ int main()
 	}
 #endif
 
-//Part7
+//Part7 三整数排序
 #if 0 
 	int a7, b7, c7, x7, y7, z7;
 	scanf("%d%d%d", &a7, &b7, &c7);
@@ -70,7 +70,7 @@ int main()
 	printf("%d %d %d\n", z7, y7, x7);
 #endif
 
-//Part8
+//Part8 
 #if 0
 
 	printf("%%d \\n \n");
@@ -89,6 +89,7 @@ int main()
 	printf("%d\n", 2147483647 + 1);
 	printf("%d\n", -2147483648 -1);
 #endif
+//Part10 闰年
 #if 0
 	int y = 0;
 	scanf("%d", &y);
@@ -98,6 +99,7 @@ int main()
 		printf("no\n");
 	}
 #endif
+//Part11 
 #if 0
 	double n9 = 0.0;
 	printf("INT_MAX %d\n", INT_MAX);
@@ -113,6 +115,8 @@ int main()
 	} else
 	printf("sum: %d\n", sum9 * count9 + count9 + 1);
 #endif
+
+//Part12  
 #if 0
 	int n9 = 0;
 	while(1){
@@ -129,7 +133,7 @@ int main()
 	}	
 #endif
 
-//Part10
+//Part13 阶乘之和
 #if 0 
 	const int MOD = 1000000;
 	int i, j, k, n, s = 0;
@@ -149,8 +153,8 @@ int main()
 	}
 #endif
 
-//Part11
-#if 1
+//Part14 最大值 最小值 平均值
+#if 0
 	int x, n = 0, min, max , s = 0;
 	while(scanf("%d", &x) == 1) {
 		printf("scanf:%d\n", x);
@@ -162,7 +166,81 @@ int main()
 	}
 	printf("%d %d %.3lf\n", min, max, (double)s/n);
 #endif
-	return 0;
+
+//Part15 浮点数陷阱
+#if 0
+
+	double i;
+	for(i = 0; i != 10; i += 0.1)
+	printf("%.1lf\n", i);
+#endif
+
+//Part]16 位数
+#if 0
+	int i = 0,  count = 1;
+	scanf("%d", &i);
+	while(i > 9) {
+		count++;
+printf("%d\n",i);
+		i = i/10;
+	}
+	printf("digit:%d\n", count);
+
+
+#endif
+
+// Part16 水仙花数 daffodil
+#if 0
+	
+#endif
+
+//Part17 韩信点兵
+
+//Part18 调和级数 harmony
+#if 0 
+	int i = 0;
+	float  sum = 0;
+	scanf("%d", &i);
+	while(i != 0){
+		sum = 1.0/i + sum;
+		i--;
+	}
+	printf("sum:%.3f\n", sum);
+#endif
+
+//Part19 近似计算 approximation
+
+//Part20 排序 permutation
+#if 0
+	for(int n = 123;n <= 329; n++){
+		
+		int a,b,c;
+		a = n /100;
+		b = n / 10 % 10;
+		c = n % 10;
+		int s = 0, m = 0;
+		s = a + b  + c;
+		m = a * b * c;
+		
+		a = 2 * n / 100;
+		b = 2 * n / 10 % 10;
+		c = 2 * n % 10;
+		s = s + a + b + c;
+		m = m * a * b * c;
+
+		a = 3 * n / 100;
+		b = 3 * n / 10 % 10;
+		c = 3 * n % 10;
+		s = s + a + b + c;
+		m = m * a * b *c;
+
+		if(s == 45 && m == 362880){
+			printf("the answer:%d\n", n);
+		}		
+	}
+#endif
+	
+return 0;
 }
 /*
 //Part 1
@@ -178,6 +256,9 @@ int main()
 1. if语句的条件是一个逻辑表达式,他的值可能为真，也可能为假
 2. C 语言中的逻辑运算符都是短路运算符，一旦能够确认整个表达式的值就不再继续计算
 3. 浮点运算可能存在误差。在进行浮点比较时，应该考虑到浮点误差
-*/
 
+//Note
+1. 比较大的数组应尽量声明在main函数外
+2. strlen 返回的是结束标记符之前的字符个数2. strlen 返回的是结束标记符之前的字符个数
+*/
 
